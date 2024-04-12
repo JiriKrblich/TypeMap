@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OpenStreetMap with Modal Popup Pins from JSON</title>
+    <title>Custom Pin Styling with CSS</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css"/>
@@ -11,12 +11,22 @@
         #map {
             height: 100vh;
             width: 100%;
+            position: relative;
             z-index: 1;
+        }
+        .custom-pin {
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            z-index: 2;
         }
         .modal {
             display: none;
             position: fixed;
-            z-index: 2;
+            z-index: 3;
             left: 0;
             top: 0;
             width: 100%;
@@ -56,12 +66,13 @@
         maxZoom: 19
     }).addTo(map);
 
-    // Function to add pins from JSON file with popups
+    // Function to add pins from JSON file with custom pin styling
     function addPinsFromJSON(jsonUrl) {
         $.getJSON(jsonUrl, function (data) {
             $.each(data, function (key, val) {
-                var marker = L.marker([val.lat, val.lon]).addTo(map);
-                marker.on('click', function(e){
+                var pin = $('<div class="custom-pin"></div>');
+                var marker = L.marker([val.lat, val.lon], {icon: L.divIcon({className: 'leaflet-div-icon', html: pin[0]})}).addTo(map);
+                pin.on('click', function(e){
                     $('#pinTitle').text(val.nazev);
                     $('#pinAuthor').text("Autor: " + val.autor);
                     $('#pinLocation').text("Místo: " + val.misto);
