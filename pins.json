@@ -1,0 +1,23 @@
+[
+  {
+    "lat": 50.0755,
+    "lon": 14.4378,
+    "nazev": "Pražský hrad",
+    "autor": "Jan Novák",
+    "misto": "Praha, Česká republika"
+  },
+  {
+    "lat": 50.0865,
+    "lon": 14.4114,
+    "nazev": "Staroměstské náměstí",
+    "autor": "Marie Svobodová",
+    "misto": "Praha, Česká republika"
+  },
+  {
+    "lat": 50.0870,
+    "lon": 14.4205,
+    "nazev": "Karlův most",
+    "autor": "Pavel Novotný",
+    "misto": "Praha, Česká republika"
+  }
+]
