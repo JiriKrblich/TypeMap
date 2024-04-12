@@ -3,25 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom Pin Styling with CSS</title>
+    <title>Custom Pin Color with CSS Variables from JSON</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css"/>
     <style>
+        body {
+            margin: 0; /* Odstranění okrajů */
+        }
+
         #map {
-            height: 100vh;
+            height: 100vh; /* Nastavení výšky na celou obrazovku */
             width: 100%;
             position: relative;
             z-index: 1;
-        }
-        .custom-pin {
-            width: 20px;
-            height: 20px;
-            background-color: red;
-            border-radius: 50%;
-            position: absolute;
-            transform: translate(-50%, -50%);
-            z-index: 2;
         }
         .modal {
             display: none;
@@ -43,10 +38,59 @@
             border: 1px solid #888;
             width: 80%;
         }
+
+        :root {
+            --green: #9ACD32; /* Pastelová zelená */
+            --blue: #ADD8E6; /* Pastelová modrá */
+            --red: #FFB6C1; /* Pastelová červená */
+        }
+
+        /* Můžete použít tyto proměnné ve vašem kódu */
+        .custom-pin {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
+
+        .green-pin {
+            background-color: var(--green);
+        }
+
+        .blue-pin {
+            background-color: var(--blue);
+        }
+
+        .red-pin {
+            background-color: var(--red);
+        }
+
+        .filter-container {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 2;
+        }
+
+        .filter-btn {
+            margin: 5px;
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
 <div id="map"></div>
+
+<div class="filter-container"> <!-- Přidáno pro umístění tlačítek filtru -->
+    <button class="filter-btn" data-color="green">Zelená</button>
+    <button class="filter-btn" data-color="blue">Modrá</button>
+    <button class="filter-btn" data-color="red">Červená</button>
+    <button class="filter-btn" data-color="all">Všechny</button>
+</div>
 
 <div id="pinModal" class="modal">
     <div class="modal-content">
@@ -66,11 +110,13 @@
         maxZoom: 19
     }).addTo(map);
 
-    // Function to add pins from JSON file with custom pin styling
+    // Function to add pins from JSON file with custom pin color
     function addPinsFromJSON(jsonUrl) {
         $.getJSON(jsonUrl, function (data) {
             $.each(data, function (key, val) {
-                var pin = $('<div class="custom-pin"></div>');
+                var pin = $('<div class="custom-pin"></div>'); 
+                var pinColor = getPinColor(val.color); // Získejte barvu pinu podle názvu barvy z JSON a překládejte ji do proměnných
+                pin.addClass(pinColor + '-pin'); // Přidání třídy pro barvu pinu
                 var marker = L.marker([val.lat, val.lon], {icon: L.divIcon({className: 'leaflet-div-icon', html: pin[0]})}).addTo(map);
                 pin.on('click', function(e){
                     $('#pinTitle').text(val.nazev);
@@ -80,6 +126,20 @@
                 });
             });
         });
+    }
+
+    // Funkce pro získání barvy pinu na základě názvu barvy
+    function getPinColor(colorName) {
+        switch (colorName) {
+            case 'green':
+                return 'green';
+            case 'blue':
+                return 'blue';
+            case 'red':
+                return 'red';
+            default:
+                return 'black'; // Výchozí černá barva, pokud není nalezena žádná shoda
+        }
     }
 
     // Call the function with the path to JSON file
@@ -94,6 +154,17 @@
     $(window).click(function(event) {
         if (event.target == $('.modal')[0]) {
             $('.modal').css('display', 'none');
+        }
+    });
+
+    // Filter pins by color
+    $('.filter-btn').click(function() {
+        var color = $(this).data('color');
+        if (color === 'all') {
+            $('.custom-pin').show();
+        } else {
+            $('.custom-pin').hide();
+            $('.' + color + '-pin').show(); // Filtrování podle třídy odpovídající barvě pinu
         }
     });
 </script>
