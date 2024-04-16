@@ -5,7 +5,8 @@
     "nazev": "Pražský hrad",
     "autor": "Jan Novák",
     "misto": "Praha, Česká republika",
-    "color": "red"
+    "color": "red",
+    "image": "obrazky/image.png"
   },
   {
     "lat": 50.0865,
@@ -13,7 +14,8 @@
     "nazev": "Staroměstské náměstí",
     "autor": "Marie Svobodová",
     "misto": "Praha, Česká republika",
-    "color": "green"
+    "color": "green",
+    "image": "obrazky/IMG_7594.jpeg"
   },
   {
     "lat": 50.0870,
@@ -21,6 +23,7 @@
     "nazev": "Karlův most",
     "autor": "Pavel Novotný",
     "misto": "Praha, Česká republika",
-    "color": "blue"
+    "color": "blue",
+    "image": "obrazky/IMG_7599.jpeg"
   }
 ]

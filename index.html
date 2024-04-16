@@ -55,6 +55,11 @@
             z-index: 2;
         }
 
+        .leaflet-div-icon {
+          background: rgba(0,0,0,0);
+          border: 0px;
+        }
+
         .green-pin {
             background-color: var(--green);
         }
@@ -98,6 +103,7 @@
         <h2 id="pinTitle"></h2>
         <p id="pinAuthor"></p>
         <p id="pinLocation"></p>
+        <img id="pinImage" src="" alt="Pin Image" width="100%"> <!-- Obrázek pinu v modálním okně -->
     </div>
 </div>
 
@@ -114,16 +120,19 @@
     function addPinsFromJSON(jsonUrl) {
         $.getJSON(jsonUrl, function (data) {
             $.each(data, function (key, val) {
-                var pin = $('<div class="custom-pin"></div>'); 
-                var pinColor = getPinColor(val.color); // Získejte barvu pinu podle názvu barvy z JSON a překládejte ji do proměnných
-                pin.addClass(pinColor + '-pin'); // Přidání třídy pro barvu pinu
-                var marker = L.marker([val.lat, val.lon], {icon: L.divIcon({className: 'leaflet-div-icon', html: pin[0]})}).addTo(map);
-                pin.on('click', function(e){
-                    $('#pinTitle').text(val.nazev);
-                    $('#pinAuthor').text("Autor: " + val.autor);
-                    $('#pinLocation').text("Místo: " + val.misto);
-                    $('.modal').css('display', 'block');
-                });
+              var pin = $('<div class="custom-pin"></div>');
+              var pinColor = getPinColor(val.color);
+              pin.addClass(pinColor + '-pin');
+              var marker = L.marker([val.lat, val.lon], {icon: L.divIcon({className: 'leaflet-div-icon', html: pin[0]})}).addTo(map);
+
+              pin.on('click', function(e){
+                  $('#pinTitle').text(val.nazev);
+                  $('#pinAuthor').text("Autor: " + val.autor);
+                  $('#pinLocation').text("Místo: " + val.misto);
+                  $('#pinImage').attr('src', val.image); // Nastavení obrázku v modálním okně na základě cesty z JSON dat
+                  $('.modal').css('display', 'block');
+              });
+
             });
         });
     }
