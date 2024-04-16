@@ -8,8 +8,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css"/>
     <style>
+
+      @import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100..900;1,100..900&display=swap');
+
         body {
             margin: 0; /* Odstranění okrajů */
+            background-color: #fff; /* Bílé pozadí */
+            color: #000; /* Černá barva textu */
+            font-family: "Azeret Mono", monospace;
+            font-optical-sizing: auto;
+            font-weight: 500;
+            font-style: normal;
         }
 
         #map {
@@ -27,22 +36,22 @@
             width: 100%;
             height: 100%;
             overflow: auto;
-            background-color: rgb(0,0,0);
-            background-color: rgba(0,0,0,0.4);
-            padding-top: 60px;
+            background-color: rgba(0,0,0,0.4); /* Průhledné černé pozadí */
+            /* padding-top: 60px; */
         }
         .modal-content {
             background-color: #fefefe;
-            margin: 5% auto;
+            /* margin: 5% auto; */
             padding: 20px;
             border: 1px solid #888;
-            width: 80%;
+            width: 400px;
+            height:100%;
         }
 
         :root {
-            --green: #9ACD32; /* Pastelová zelená */
-            --blue: #ADD8E6; /* Pastelová modrá */
-            --red: #FFB6C1; /* Pastelová červená */
+            --green: #8BFFB5; /* Pastelová zelená */
+            --blue: #BF8BFF; /* Pastelová modrá */
+            --red: #FFD283; /* Pastelová červená */
         }
 
         /* Můžete použít tyto proměnné ve vašem kódu */
@@ -56,8 +65,8 @@
         }
 
         .leaflet-div-icon {
-          background: rgba(0,0,0,0);
-          border: 0px;
+            background: rgba(0,0,0,0);
+            border: 0px;
         }
 
         .green-pin {
@@ -74,7 +83,7 @@
 
         .filter-container {
             position: absolute;
-            top: 10px;
+            bottom: 10px;
             left: 10px;
             z-index: 2;
         }
@@ -84,6 +93,31 @@
             padding: 5px 10px;
             border: 1px solid #ccc;
             cursor: pointer;
+            font-family: "Azeret Mono", monospace;
+            font-optical-sizing: auto;
+            font-weight: 500;
+            font-style: normal;
+            border-radius: 200px;
+        }
+
+        .filter-btn:hover {
+            font-family: "Azeret Mono", monospace;
+            font-optical-sizing: auto;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        .logo{
+          width:250px;
+          height:62px;
+          background-image: url(style/logo_v01.svg);
+          background-position: center;
+          background-size: contain;
+          background-repeat: no-repeat;
+          position: absolute;
+          top: 15px;
+          right:15px;
+          z-index: 1;
         }
     </style>
 </head>
@@ -91,15 +125,18 @@
 <div id="map"></div>
 
 <div class="filter-container"> <!-- Přidáno pro umístění tlačítek filtru -->
-    <button class="filter-btn" data-color="green">Zelená</button>
-    <button class="filter-btn" data-color="blue">Modrá</button>
-    <button class="filter-btn" data-color="red">Červená</button>
+    <button class="filter-btn" data-color="green">Stálé</button>
+    <button class="filter-btn" data-color="blue">Polostálé</button>
+    <button class="filter-btn" data-color="red">Mizivé</button>
     <button class="filter-btn" data-color="all">Všechny</button>
 </div>
+
+<div class="logo"></div>
 
 <div id="pinModal" class="modal">
     <div class="modal-content">
         <span class="close">&times;</span>
+        <img id="fontImage" src="" alt="Font Image" width="100%">
         <h2 id="pinTitle"></h2>
         <p id="pinAuthor"></p>
         <p id="pinLocation"></p>
@@ -109,12 +146,12 @@
 
 <script>
     var map = L.map('map').setView([50.0755, 14.4378], 13); // Praha coordinates
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-        subdomains: 'abc',
-        minZoom: 0,
-        maxZoom: 19
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
     }).addTo(map);
+
+    map.zoomControl.setPosition('bottomright');
 
     // Function to add pins from JSON file with custom pin color
     function addPinsFromJSON(jsonUrl) {
@@ -129,7 +166,8 @@
                   $('#pinTitle').text(val.nazev);
                   $('#pinAuthor').text("Autor: " + val.autor);
                   $('#pinLocation').text("Místo: " + val.misto);
-                  $('#pinImage').attr('src', val.image); // Nastavení obrázku v modálním okně na základě cesty z JSON dat
+                  $('#pinImage').attr('src', val.image);
+                  $('#fontImage').attr('src', val.fontimage); // Nastavení nového obrázku
                   $('.modal').css('display', 'block');
               });
 
