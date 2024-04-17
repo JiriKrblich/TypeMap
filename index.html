@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom Pin Color with CSS Variables from JSON</title>
+    <title>TypoMap | Czech typography guide</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css"/>
@@ -56,8 +56,8 @@
 
         /* Můžete použít tyto proměnné ve vašem kódu */
         .custom-pin {
-            width: 20px;
-            height: 20px;
+            width: 25px;
+            height: 25px;
             border-radius: 50%;
             position: absolute;
             transform: translate(-50%, -50%);
@@ -86,12 +86,23 @@
             bottom: 10px;
             left: 10px;
             z-index: 2;
+            padding:15px;
+            background-color:rgb(255,255,255);
+            border-radius: 10px
+        }
+
+        .filter-container:hover{
+          background-color:rgb(255,210,131);
+        }
+
+        .filter-container:hover>.filter-btn{
+          background: #C9C9C9;
         }
 
         .filter-btn {
             margin: 5px;
             padding: 5px 10px;
-            border: 1px solid #ccc;
+            border: 0px solid #ccc;
             cursor: pointer;
             font-family: "Azeret Mono", monospace;
             font-optical-sizing: auto;
@@ -119,12 +130,28 @@
           right:15px;
           z-index: 1;
         }
+
+        p{
+          font-size:14px;
+        }
+
+        .describeModal{
+          margin-top: 0;
+          color: #979797;
+        }
+        .filterText{
+          margin:0;
+          font-weight: 800;
+          margin-left: 20px;
+          margin-bottom:10px;
+        }
     </style>
 </head>
 <body>
 <div id="map"></div>
 
 <div class="filter-container"> <!-- Přidáno pro umístění tlačítek filtru -->
+    <h4 class="filterText">Filter:</h4>
     <button class="filter-btn" data-color="green">Stálé</button>
     <button class="filter-btn" data-color="blue">Polostálé</button>
     <button class="filter-btn" data-color="red">Mizivé</button>
@@ -137,10 +164,13 @@
     <div class="modal-content">
         <span class="close">&times;</span>
         <img id="fontImage" src="" alt="Font Image" width="100%">
+        <p class="describeModal">Source: FontsInUse</p>
         <h2 id="pinTitle"></h2>
         <p id="pinAuthor"></p>
         <p id="pinLocation"></p>
-        <img id="pinImage" src="" alt="Pin Image" width="100%"> <!-- Obrázek pinu v modálním okně -->
+        <img id="pinImage" src="" alt="Pin Image" width="100%">
+        <p>Did you spot Czech typeface?<br>
+          <a>Get us know!</a></p>
     </div>
 </div>
 
