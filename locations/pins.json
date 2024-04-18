@@ -2,7 +2,7 @@
   {
     "lat": 50.101242,
     "lon": 14.399153,
-    "fontimage": "/pisma/ladislav.png",
+    "fontimage": "pisma/ladislav.png",
     "autor": "Tomáš Brousil",
     "foundry": "Suitcase Type Foundry",
     "release": "2013",
@@ -14,7 +14,7 @@
   {
     "lat": 50.083056,
     "lon": 14.435833,
-    "fontimage": "/pisma/fedra-sans.png",
+    "fontimage": "pisma/fedra-sans.png",
     "autor": "Peter Biľak",
     "foundry": "Typotheque",
     "release": "2001",
@@ -26,7 +26,7 @@
   {
     "lat": 50.068531,
     "lon": 14.402290,
-    "fontimage": "/pisma/urban-grotesk.png",
+    "fontimage": "pisma/urban-grotesk.png",
     "autor": "Tomáš Brousil",
     "foundry": "Suitcase Type Foundry",
     "release": "2014",
@@ -38,7 +38,7 @@
   {
     "lat": 50.098280,
     "lon": 14.444180,
-    "fontimage": "/pisma/trznice-czechdesign-def-02.png",
+    "fontimage": "pisma/trznice-czechdesign-def-02.png",
     "autor": "Filip Matejicek and Jan Horcik",
     "foundry": "Heavyweight",
     "release": "unreleased",
@@ -50,7 +50,7 @@
   {
     "lat": 50.071920,
     "lon": 14.404390,
-    "fontimage": "/pisma/376677224_18368016931070232_6404568176684129208_n.jpg",
+    "fontimage": "pisma/376677224_18368016931070232_6404568176684129208_n.jpg",
     "autor": "Martin Vácha",
     "foundry": "Displaay",
     "release": "unreleased",
@@ -62,7 +62,7 @@
   {
     "lat": 50.0816666,
     "lon": 14.41742198583189,
-    "fontimage": "/pisma/ac-visual.png",
+    "fontimage": "pisma/ac-visual.png",
     "autor": "Jan Novák",
     "foundry": "AllCaps",
     "release": "2023",
@@ -74,7 +74,7 @@
   {
     "lat": 50.0818452,
     "lon": 14.4191744,
-    "fontimage": "/pisma/bc-alphapipe.png",
+    "fontimage": "pisma/bc-alphapipe.png",
     "autor": "Radek Sidun",
     "foundry": "Briefcase Type Foundry",
     "release": "2014",
@@ -86,7 +86,7 @@
   {
     "lat": 50.0813192,
     "lon": 14.4063863,
-    "fontimage": "/pisma/ac-youth.png",
+    "fontimage": "pisma/ac-youth.png",
     "autor": "Jan Novák",
     "foundry": "AllCaps",
     "release": "2022",
@@ -98,7 +98,7 @@
   {
     "lat": 50.0730356,
     "lon": 14.4179892,
-    "fontimage": "/pisma/bc-rebecca.png",
+    "fontimage": "pisma/bc-rebecca.png",
     "autor": "Jana Horáčková",
     "foundry": "Briefcase Type Foundry",
     "release": "2014",
@@ -110,7 +110,7 @@
   {
     "lat": 50.0755903,
     "lon": 14.4305442,
-    "fontimage": "/pisma/bc-falster-grotesk.png",
+    "fontimage": "pisma/bc-falster-grotesk.png",
     "autor": "Jan Novák",
     "foundry": "Briefcase Type Foundry",
     "release": "2014",
@@ -122,7 +122,7 @@
   {
     "lat": 50.0908378,
     "lon": 14.4094722,
-    "fontimage": "/pisma/ladislav.png",
+    "fontimage": "pisma/ladislav.png",
     "autor": "Tomáš Brousil",
     "foundry": "Suitcase Type Foundry",
     "release": "2013",
@@ -134,7 +134,7 @@
   {
     "lat": 50.1050988,
     "lon": 14.4748663,
-    "fontimage": "/pisma/bc-merkur.png",
+    "fontimage": "pisma/bc-merkur.png",
     "autor": "Marek Pistora",
     "foundry": "Briefcase Type Foundry",
     "release": "2014",
@@ -146,7 +146,7 @@
   {
     "lat": 50.0742362,
     "lon": 14.4301142,
-    "fontimage": "/pisma/prague-citizen-1142022-01.jpg",
+    "fontimage": "pisma/prague-citizen-1142022-01.jpg",
     "autor": "Vojtěch Říha",
     "foundry": "Superiour Type",
     "release": "2023",
@@ -158,7 +158,7 @@
   {
     "lat": 50.0871396,
     "lon": 14.4070298,
-    "fontimage": "/pisma/fk-screamer.png",
+    "fontimage": "pisma/fk-screamer.png",
     "autor": "Květoslav Bartoš",
     "foundry": "Florian Karsten",
     "release": "2018",
@@ -170,7 +170,7 @@
   {
     "lat": 50.0818372,
     "lon": 14.4078269,
-    "fontimage": "/pisma/matter.png",
+    "fontimage": "pisma/matter.png",
     "autor": "Martin Vácha",
     "foundry": "Displaay",
     "release": "2015",
