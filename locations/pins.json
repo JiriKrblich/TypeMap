@@ -9,7 +9,7 @@
     "misto": "Náměstí Svobody, Praha, Česká republika",
     "category": "Information system",
     "color": "green",
-    "image": "/obrazky/04C3A49D-EE9F-475B-BDD1-B0D8FC7BAB72.jpg"
+    "image": "obrazky/04C3A49D-EE9F-475B-BDD1-B0D8FC7BAB72.jpg"
   },
   {
     "lat": 50.083056,
@@ -21,7 +21,7 @@
     "misto": "Hlavní nádraží, Praha, Česká republika",
     "category": "Visual identity",
     "color": "blue",
-    "image": "/obrazky/IMG_7599.jpeg"
+    "image": "obrazky/IMG_7599.jpeg"
   },
   {
     "lat": 50.068531,
@@ -33,7 +33,7 @@
     "misto": "Radlická, Praha, Česká republika",
     "category": "Visual identity",
     "color": "green",
-    "image": "/obrazky/IMG_7594.jpeg"
+    "image": "obrazky/IMG_7594.jpeg"
   },
   {
     "lat": 50.098280,
@@ -45,7 +45,7 @@
     "misto": "Bubenské nábřeží, Praha, Česká republika",
     "category": "Visual identity",
     "color": "blue",
-    "image": "/obrazky/IMG_7622.JPG"
+    "image": "obrazky/IMG_7622.JPG"
   },
   {
     "lat": 50.071920,
@@ -57,7 +57,7 @@
     "misto": "Nádražní, Praha, Česká republika",
     "category": "Visual identity",
     "color": "red",
-    "image": "/obrazky/IMG_7631.jpg"
+    "image": "obrazky/IMG_7631.jpg"
   },
   {
     "lat": 50.0816666,
@@ -69,7 +69,7 @@
     "misto": "Národní, Praha, Česká republika",
     "category": "Navigation",
     "color": "green",
-    "image": "/obrazky/IMG_7635.jpeg"
+    "image": "obrazky/IMG_7635.jpeg"
   },
   {
     "lat": 50.0818452,
@@ -81,7 +81,7 @@
     "misto": "Spálená, Praha, Česká republika",
     "category": "Book",
     "color": "red",
-    "image": "/obrazky/IMG_7636.jpg"
+    "image": "obrazky/IMG_7636.jpg"
   },
   {
     "lat": 50.0813192,
@@ -93,7 +93,7 @@
     "misto": "Vítezná, Praha, Česká republika",
     "category": "Visual identity",
     "color": "green",
-    "image": "/obrazky/IMG_7530.jpg"
+    "image": "obrazky/IMG_7530.jpg"
   },
   {
     "lat": 50.0730356,
@@ -105,7 +105,7 @@
     "misto": "Vyšehradská, Praha, Česká republika",
     "category": "Book",
     "color": "red",
-    "image": "/obrazky/IMG_7605.jpg"
+    "image": "obrazky/IMG_7605.jpg"
   },
   {
     "lat": 50.0755903,
@@ -117,7 +117,7 @@
     "misto": "Jugoslávská, Praha, Česká republika",
     "category": "Visual identity",
     "color": "red",
-    "image": "/obrazky/IMG_7606.jpg"
+    "image": "obrazky/IMG_7606.jpg"
   },
   {
     "lat": 50.0908378,
@@ -129,7 +129,7 @@
     "misto": "Malostranská, Praha, Česká republika",
     "category": "Poster",
     "color": "red",
-    "image": "/obrazky/image.png"
+    "image": "obrazky/image.png"
   },
   {
     "lat": 50.1050988,
@@ -141,7 +141,7 @@
     "misto": "Palmovka, Praha, Česká republika",
     "category": "Poster",
     "color": "red",
-    "image": "/obrazky/image2.png"
+    "image": "obrazky/image2.png"
   },
   {
     "lat": 50.0742362,
@@ -153,7 +153,7 @@
     "misto": "Legerova, Praha, Česká republika",
     "category": "Navigation",
     "color": "blue",
-    "image": "/obrazky/image3.png"
+    "image": "obrazky/image3.png"
   },
   {
     "lat": 50.0871396,
@@ -165,7 +165,7 @@
     "misto": "Mostecká, Praha, Česká republika",
     "category": "Navigation",
     "color": "red",
-    "image": "/obrazky/image4.png"
+    "image": "obrazky/image4.png"
   },
   {
     "lat": 50.0818372,
@@ -177,7 +177,7 @@
     "misto": "Malostranské nábřeží, Praha, Česká republika",
     "category": "Poster",
     "color": "red",
-    "image": "/obrazky/image5.png"
+    "image": "obrazky/image5.png"
   }
 
 ]
