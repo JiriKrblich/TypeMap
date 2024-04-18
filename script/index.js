@@ -4,15 +4,6 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© OpenStreetMap contributors'
 }).addTo(map);
 
-/* puvodni tema*/
-
-/*
-L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png', {
-    maxZoom: 20,
-    attribution: '&copy; <a href="https://stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>',
-}).addTo(map);
-*/
-
 map.zoomControl.setPosition('bottomright');
 
 // Function to add pins from JSON file with custom pin color
@@ -25,7 +16,6 @@ function addPinsFromJSON(jsonUrl) {
           var marker = L.marker([val.lat, val.lon], {icon: L.divIcon({className: 'leaflet-div-icon', html: pin[0]})}).addTo(map);
 
           pin.on('click', function(e){
-              //$('#pinTitle').text(val.nazev);
               $('#pinAuthor').text("Author: " + val.autor);
               $('#pinFoudry').text("Foundry: " + val.foundry);
               $('#pinRelease').text("Release: " + val.release);
@@ -67,7 +57,6 @@ document.addEventListener('keydown', function(event) {
     $('.modal').css('display', 'none');
   }
 });
-
 
 // Close the modal when the user clicks outside of it
 $(window).click(function(event) {
