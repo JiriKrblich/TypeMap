@@ -12,4 +12,4 @@ Run on your own with  python
 
 ### Credits:
 typography: FontsInUse, Forbes, Displaay's Instagram, CzechDesign\
-technology: OpenStreetMap, leaflet, Stadia Maps
+technology: OpenStreetMap, leaflet
