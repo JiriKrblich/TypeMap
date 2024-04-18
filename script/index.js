@@ -45,7 +45,7 @@ function getPinColor(colorName) {
 }
 
 // Call the function with the path to JSON file
-addPinsFromJSON('/locations/pins.json'); // Change the file name and path as needed
+addPinsFromJSON('locations/pins.json'); // Change the file name and path as needed
 
 // Close the modal when the close button is clicked
 $('.close').click(function() {
