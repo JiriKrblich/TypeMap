@@ -1,2 +1,2 @@
 # TypeMap
-Guide to Czech typography in Prague
+Guide to Czech & Slovak typography in Prague
