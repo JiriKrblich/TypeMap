@@ -92,16 +92,18 @@
   }
 
   .green-pin {
-      background-color: var(--green);
-      /* background: conic-gradient(rgba(255,255,255,0.5), var(--green))*/;
+      /* background-color: var(--green); */
+      background: conic-gradient(rgba(255,255,255,0.5), var(--green));
   }
 
   .blue-pin {
-      background-color: var(--blue);
+      /* background-color: var(--blue);*/
+      background: conic-gradient(rgba(255,255,255,0.5), var(--blue));
   }
 
   .red-pin {
-      background-color: var(--red);
+      /* background-color: var(--red);*/
+      background: conic-gradient(rgba(255,255,255,0.5), var(--red));
   }
 
   .filter-container {
