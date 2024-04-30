@@ -98,7 +98,7 @@ body {
 
 .blue-pin {
     background-color: var(--blue);
-    background: conic-gradient(rgba(255, 255, 255, 0.5), var(--blue));
+    /* background: conic-gradient(rgba(255, 255, 255, 0.5), var(--blue));*/
 }
 
 .red-pin {
