@@ -25,7 +25,7 @@
   },
   {
     "lat": 50.068531,
-    "lon": 14.402290,
+    "lon": 14.40229,
     "fontimage": "pisma/urban-grotesk.png",
     "autor": "Tomáš Brousil",
     "foundry": "Suitcase Type Foundry",
@@ -36,8 +36,8 @@
     "image": "obrazky/IMG_7594.jpeg"
   },
   {
-    "lat": 50.098280,
-    "lon": 14.444180,
+    "lat": 50.09828,
+    "lon": 14.44418,
     "fontimage": "pisma/trznice-czechdesign-def-02.png",
     "autor": "Filip Matejicek and Jan Horcik",
     "foundry": "Heavyweight",
@@ -48,8 +48,8 @@
     "image": "obrazky/IMG_7622.JPG"
   },
   {
-    "lat": 50.071920,
-    "lon": 14.404390,
+    "lat": 50.07192,
+    "lon": 14.40439,
     "fontimage": "pisma/376677224_18368016931070232_6404568176684129208_n.jpg",
     "autor": "Martin Vácha",
     "foundry": "Displaay",
@@ -190,6 +190,17 @@
     "category": "Visual identity",
     "color": "red",
     "image": "obrazky/IMG_5059.png"
+  },
+  {
+    "lat": 50.09244,
+    "lon": 14.40119,
+    "fontimage": "pisma/enamelplate-storm.png",
+    "autor": "František Štorm",
+    "foundry": "Storm Type Foundry",
+    "release": "2011",
+    "misto": "Vratislavova, Praha 2",
+    "category": "Visual identity",
+    "color": "red",
+    "image": "obrazky/IMG_7671.jpg"
   }
-
 ]
